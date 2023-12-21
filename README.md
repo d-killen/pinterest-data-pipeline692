@@ -18,6 +18,14 @@ It then runs queries of the database to answer specific questions and prints the
 ## Skills Covered
 
 Learning achieved through this project includes:
+- Experience in AWS
+    - EC2
+    - MSK
+    - S3
+    - Plugin
+    - Connector
+- Setting up and configuring an Amazon EC2 instance with MSK
+- Kafka
 - Experience with Python: 
     - function definition
     - class definitions
