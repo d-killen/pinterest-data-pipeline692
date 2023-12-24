@@ -11,21 +11,21 @@
 
 ## Description
 
-This project takes data from multiple disparate sources, cleans it up and uploads to a single database
+This project emulates a data stream from pinterest of pins, their geolocation data and the users posting them.
 
-It then runs queries of the database to answer specific questions and prints the results
+It then processes this data via Databricks notebooks both as a batch and as a stream.
 
 ## Skills Covered
 
 Learning achieved through this project includes:
 - Experience in AWS
-    - EC2
+    - EC2 instances
     - MSK
-    - S3
-    - Plugin
-    - Connector
-- Setting up and configuring an Amazon EC2 instance with MSK
-- Kafka
+    - S3 Buckets
+    - API setup
+    - Kinesis
+    - Plugins
+    - Connectors
 - Experience with Python: 
     - function definition
     - class definitions
@@ -39,40 +39,35 @@ Learning achieved through this project includes:
 
 ## Installation Instructions
 
-1. Download the Multinational Retail Data Centralisation project directory
-1. Create the necessary PostgreSQL database named sales_data 
-1. Create a local YAML file named db_creds.yaml and locate it in the project directory and within it enter the following data:
-
-        RDS_HOST: <host address of the data stored in the RDS database>
-        RDS_PASSWORD: <password to the data stored in the RDS database>
-        RDS_USER: <username to the data stored in the RDS database>
-        RDS_DATABASE: <name of the RDS database>
-        RDS_PORT: <port to the data stored in the RDS database>
-
-        SD_HOST: <your sales_data host>
-        SD_PASSWORD: <password to your sales_data database>
-        SD_USER: <username for your sales_data database>
-        SD_DATABASE: <name of your sales_data database>
-        SD_PORT: <port to your sales_data database>
+1. Download the project directory
+1. Create the necessary infrastructure on AWS and update the scripts accordingly:
+    - EC2 Instance
+    - S3 Bucket
+    - MSK Connector
+    - Kinesis Streams
+    - APIs
+1. Upload both notebooks to Databricks
+1. Create and store the required .pem file in the lcoal project directory
 
 ## Usage Instructions
 
-Once installed, run the milestones.py file
-
-NOTE: Running the milestones.py file twice will produce an error without first removing all tables from your sales_data database
+1. Via the EC2 instance start the API
+1. Run the emulation scripts
+1. Run the processing notebooks
 
 ## Project File Structure
 
 - Project Directory
     - README.md
-    - milestones.py
-    - data_extraction.py
-    - data_cleaning.py
-    - database_utils.py
+    - user_posting_emulation.py
+    - user_posting_emulation_streaming.py
+    - 0a25072a5e0f_dag.py
+    - batch_processing_notebook.ipynb
+    - stream_processing_notebook.ipynb
 
 ## License Information
 
-Multinational Retail Data Centralisation
+pinterest-data-pipeline692
 Copyright (C) 2023 Daniel Killen
 
 This program is free software; you can redistribute it and/or modify
